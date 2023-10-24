@@ -6,76 +6,75 @@ class Dashboard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      body: Column(
+        body: SingleChildScrollView(
+      child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          // Weather
-          Flexible(
-            child: Card(
-              margin: EdgeInsets.all(16.0),
-              child: ListTile(
-                title: Text('Weather'),
-                subtitle: Text('Current weather information'),
-              ),
+          //Weather
+          Card(
+            margin: EdgeInsets.all(16.0),
+            child: ListTile(
+              title: Text('Weather'),
+              subtitle: Text('Current weather information'),
             ),
           ),
 
-          // Crop Analysis
-          Flexible(
-            child: Card(
-              margin: EdgeInsets.all(16.0),
-              child: ListTile(
-                title: Text('Crop Analysis'),
-                subtitle: Text('Crop analysis data'),
-              ),
+          //Crop Analysis
+          Card(
+            margin: EdgeInsets.all(16.0),
+            child: ListTile(
+              title: Text('Crop Analysis'),
+              subtitle: Text('Crop analysis data'),
             ),
           ),
 
-          // History of Analysis
-          Flexible(
-            child: Card(
-              margin: EdgeInsets.all(16.0),
-              child: ListTile(
-                title: Text('History of Analysis'),
-                subtitle: Text('Analysis history data'),
-              ),
+          //Analysis History
+          Card(
+            margin: EdgeInsets.all(16.0),
+            child: ListTile(
+              title: Text('History of Analysis'),
+              subtitle: Text('Analysis history data'),
             ),
           ),
 
-          // Cultivation Tips
-          Flexible(
-            child: Card(
-              margin: EdgeInsets.all(16.0),
-              child: ListTile(
-                title: Text('Cultivation Tips'),
-                subtitle: Text('Helpful tips for cultivation'),
+          Row(
+            children: [
+              //Cultivation Tips
+              Expanded(
+                child: Card(
+                  margin: EdgeInsets.all(16.0),
+                  child: ListTile(
+                    title: Text('Cultivation Tips'),
+                    subtitle: Text('Helpful tips for cultivation'),
+                  ),
+                ),
               ),
-            ),
-          ),
 
-          // Pests and Diseases Info
-          Flexible(
-            child: Card(
-              margin: EdgeInsets.all(16.0),
-              child: ListTile(
-                title: Text('Pests and Diseases Info'),
-                subtitle: Text('Information on common pests and diseases'),
+              //Pests and Diseases
+              Expanded(
+                child: Card(
+                  margin: EdgeInsets.all(16.0),
+                  child: ListTile(
+                    title: Text('Pests and Diseases Info'),
+                    subtitle: Text('Information on common pests and diseases'),
+                  ),
+                ),
               ),
-            ),
-          ),
 
-          // Crop Yield Detection
-          Flexible(
-            child: Card(
-              margin: EdgeInsets.all(16.0),
-              child: ListTile(
-                title: Text('Crop Yield Detection'),
-                subtitle: Text('Crop yield data and analysis'),
+              //Crop Yield Detection
+              Expanded(
+                child: Card(
+                  margin: EdgeInsets.all(16.0),
+                  child: ListTile(
+                    title: Text('Crop Yield Detection'),
+                    subtitle: Text('Crop yield data and analysis'),
+                  ),
+                ),
               ),
-            ),
+            ],
           ),
         ],
       ),
-    );
+    ));
   }
 }
