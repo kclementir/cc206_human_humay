@@ -5,7 +5,7 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+ const MyApp({super.key});
 
  @override
  Widget build(BuildContext context) {
@@ -39,44 +39,46 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
       body: Center(
-        child: Form(
-          key: _formKey,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              TextFormField(
-                decoration: const InputDecoration(
-                 hintText: 'Enter your email',
+        child: SingleChildScrollView(
+          padding: const EdgeInsets.all(16),
+          child: Form(
+            key: _formKey,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                TextFormField(
+                 decoration: const InputDecoration(
+                    hintText: 'Enter your email',
+                 ),
+                 validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'Please enter some text';
+                    }
+                    return null;
+                 },
                 ),
-                validator: (value) {
-                 if (value == null || value.isEmpty) {
-                    return 'Please enter some text';
-                 }
-                 return null;
-                },
-              ),
-              TextFormField(
-                decoration: const InputDecoration(
-                 hintText: 'Enter your password',
+                const SizedBox(height: 16),
+                TextFormField(
+                 decoration: const InputDecoration(
+                    hintText: 'Enter your password',
+                 ),
+                 validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'Please enter some text';
+                    }
+                    return null;
+                 },
+                 obscureText: true,
                 ),
-                validator: (value) {
-                 if (value == null || value.isEmpty) {
-                    return 'Please enter some text';
-                 }
-                 return null;
-                },
-                obscureText: true,
-              ),
-              Padding(
-                padding: const EdgeInsets.symmetric(vertical: 16.0),
-                child: ElevatedButton(
+                const SizedBox(height: 16),
+                ElevatedButton(
                  onPressed: () {
-                   
+                   // TODO: login logic here
                  },
                  child: const Text('Submit'),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),
