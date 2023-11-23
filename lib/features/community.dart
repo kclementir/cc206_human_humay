@@ -5,33 +5,45 @@ void main() {
 }
 
 class Community extends StatelessWidget {
-  const Community({super.key});
+  const Community({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: const Text('GLOBE'),
+          title: const Text(
+            'HUMÁNHUMAY',
+            style: TextStyle(
+              fontFamily: 'Brand',
+              color: Color(0xFF367750),
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          backgroundColor: Colors.white,
         ),
-        body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              const Text('100'),
-              const SizedBox(height: 20),
-              Image.asset('assets/image.png'),
-              const SizedBox(height: 20),
-              const Text('MC'),
-              const SizedBox(height: 20),
-              const Text('What is the best disease management for Tungro?'),
-              const SizedBox(height: 20),
-              const Text("What's wrong with my rice plant? Please help!"),
-              const SizedBox(height: 20),
-              const Text('Dremitte'),
-              const SizedBox(height: 20),
-              const Text('Write Post'),
-            ],
+        //Background Color
+        body: Container(
+          constraints: const BoxConstraints
+              .expand(), // Ensure the container takes up the whole screen
+          decoration: const BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+              colors: [
+                Color(0xFF367750),
+                Color(0xFF8B8421),
+              ],
+            ),
+          ),
+          child: const Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text('Community Posts'),
+                SizedBox(height: 20),
+              ],
+            ),
           ),
         ),
       ),
