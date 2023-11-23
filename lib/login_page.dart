@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:cc206_human_humay/components/tabs.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -6,13 +7,36 @@ class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Flutter Login Form'),
-      ),
-      body: const Center(
-        child: SingleChildScrollView(
-          padding: EdgeInsets.all(16),
-          child: LoginForm(),
+      //Background color
+      body: Container(
+        constraints: const BoxConstraints.expand(),
+        decoration: const BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            colors: [
+              Color(0xFF367750),
+              Color(0xFF8B8421),
+            ],
+          ),
+        ),
+        //App Logo
+        child: Center(
+          child: SingleChildScrollView(
+            padding: const EdgeInsets.all(5),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Image.asset(
+                  'assets/images/applogo.png',
+                  width: 200,
+                  height: 200,
+                ),
+                const SizedBox(height: 100),
+                const LoginForm(),
+              ],
+            ),
+          ),
         ),
       ),
     );
@@ -63,7 +87,13 @@ class _LoginFormState extends State<LoginForm> {
           const SizedBox(height: 16),
           ElevatedButton(
             onPressed: () {
-              // TODO: login logic here
+              if (_formKey.currentState?.validate() ?? false) {
+                // If form is valid, navigate to the Dashboard
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const TabBarDemo()),
+                );
+              }
             },
             child: const Text('Submit'),
           ),
