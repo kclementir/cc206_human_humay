@@ -8,7 +8,7 @@ void main() {
 }
 
 class TabBarDemo extends StatelessWidget {
-  const TabBarDemo({Key? key});
+  const TabBarDemo({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -24,26 +24,19 @@ class TabBarDemo extends StatelessWidget {
             ],
           ),
           bottomNavigationBar: TabBar(
-            indicatorColor:
-                Color(0xFF367750), // Color for selected tab underline
-            labelColor: Color(0xFF367750), // Color for selected tab
-            unselectedLabelColor: Colors.grey, //Color for unselected tab
-            indicatorWeight: 4.0, //adjust height of the underline
+            indicatorColor: Color(0xFF367750),
+            labelColor: Color(0xFF367750),
+            unselectedLabelColor: Colors.grey,
+            indicatorWeight: 4.0,
             tabs: [
               Tab(
-                icon: Icon(
-                  Icons.local_florist_outlined,
-                ),
+                icon: Icon(Icons.local_florist_outlined),
               ),
               Tab(
-                icon: Icon(
-                  Icons.people,
-                ),
+                icon: Icon(Icons.people),
               ),
               Tab(
-                icon: Icon(
-                  Icons.account_circle,
-                ),
+                icon: Icon(Icons.account_circle),
               ),
             ],
           ),
