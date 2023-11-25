@@ -13,6 +13,7 @@ class TabBarDemo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
+      debugShowCheckedModeBanner: false, //remove debug banner
       home: DefaultTabController(
         length: 3,
         child: Scaffold(

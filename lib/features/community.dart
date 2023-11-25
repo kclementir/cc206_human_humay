@@ -10,6 +10,7 @@ class Community extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false, //remove debug banner
       home: Scaffold(
         appBar: AppBar(
           title: const Text(
