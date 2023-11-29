@@ -39,7 +39,7 @@ class Dashboard extends StatelessWidget {
                 child: const Align(
                   alignment: Alignment.centerLeft,
                   child: Padding(
-                    padding: EdgeInsets.only(left: 16.0), // Adjust left padding
+                    padding: EdgeInsets.only(left: 16.0),
                     child: Text(
                       'Weather',
                       style: TextStyle(
@@ -53,54 +53,94 @@ class Dashboard extends StatelessWidget {
               ),
 
               // Weather details card with adjusted margin
-              const Card(
-                margin: EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
-                child: ListTile(
-                  title: Text('Weather Janiuay, Western Visayas 25 May'),
-                  subtitle: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text('29°C',
+              Container(
+                margin:
+                    const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+                child: const Card(
+                  child: ListTile(
+                    title: Text(
+                      'Janiuay, Western Visayas 25 May',
+                      style: TextStyle(
+                        fontSize: 14,
+                        color: Color(0xFF367750),
+                      ),
+                    ),
+                    subtitle: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          '29°C',
                           style: TextStyle(
-                              fontSize: 48, fontWeight: FontWeight.bold)),
-                      SizedBox(height: 10),
-                      Text('Sunset 6:08 PM',
+                            fontSize: 75,
+                            color: Color(0xFF367750),
+                          ),
+                        ),
+                        Text(
+                          'Sunset 6:08 PM',
                           style: TextStyle(
-                              fontSize: 24, fontWeight: FontWeight.bold)),
-                      SizedBox(height: 10),
-                      Text('It is cloudy today.',
-                          style: TextStyle(fontSize: 24)),
-                      SizedBox(height: 20),
-                      Text('Today would be a bad day for:',
+                            fontSize: 14,
+                            color: Color(0xFF367750),
+                          ),
+                        ),
+                        Divider(
+                          // Add a line after "Sunset 6:08 PM"
+                          color: Color(0xFF367750),
+                          thickness: 1,
+                          height: 20,
+                        ),
+                        Text(
+                          'It is cloudy today.',
                           style: TextStyle(
-                              fontSize: 24, fontWeight: FontWeight.bold)),
-                      SizedBox(height: 10),
-                      Text('APPLYING PESTICIDES',
-                          style: TextStyle(
-                              fontSize: 24,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.red)),
-                      SizedBox(height: 20),
-                    ],
+                            fontSize: 14,
+                            color: Color(0xFF367750),
+                          ),
+                        ),
+                        SizedBox(height: 3),
+                        Row(
+                          // Add a Row for "Today would be a bad day for:" and "APPLYING PESTICIDES"
+                          children: [
+                            Text(
+                              'Today would be a bad day for: ',
+                              style: TextStyle(
+                                fontSize: 14,
+                                color: Color(0xFF367750),
+                              ),
+                            ),
+                            Text(
+                              'APPLYING PESTICIDES',
+                              style: TextStyle(
+                                fontSize: 14,
+                                fontWeight: FontWeight.bold,
+                                color: Color(0xFF367750),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ),
 
               // Crop Analysis
-              const Card(
-                margin: EdgeInsets.all(16.0),
-                child: ListTile(
-                  title: Text('Crop Analysis'),
-                  subtitle: Text('Crop analysis data'),
+              Container(
+                margin: const EdgeInsets.all(16.0),
+                child: const Card(
+                  child: ListTile(
+                    title: Text('Crop Analysis'),
+                    subtitle: Text('Crop analysis data'),
+                  ),
                 ),
               ),
 
               // Analysis History
-              const Card(
-                margin: EdgeInsets.all(16.0),
-                child: ListTile(
-                  title: Text('History of Analysis'),
-                  subtitle: Text('Analysis history data'),
+              Container(
+                margin: const EdgeInsets.all(16.0),
+                child: const Card(
+                  child: ListTile(
+                    title: Text('History of Analysis'),
+                    subtitle: Text('Analysis history data'),
+                  ),
                 ),
               ),
 
