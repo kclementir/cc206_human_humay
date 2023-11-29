@@ -33,9 +33,9 @@ class Dashboard extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              // Weather title with padding at the top
+              // Weather title
               Container(
-                padding: const EdgeInsets.only(top: 16.0),
+                padding: const EdgeInsets.only(top: 8.0),
                 child: const Align(
                   alignment: Alignment.centerLeft,
                   child: Padding(
@@ -44,7 +44,6 @@ class Dashboard extends StatelessWidget {
                       'Weather',
                       style: TextStyle(
                         fontSize: 24,
-                        fontWeight: FontWeight.bold,
                         color: Colors.white,
                       ),
                     ),
@@ -52,10 +51,12 @@ class Dashboard extends StatelessWidget {
                 ),
               ),
 
-              // Weather details card with adjusted margin
+              // Weather details card
               Container(
-                margin:
-                    const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+                margin: const EdgeInsets.symmetric(
+                  horizontal: 16.0,
+                  vertical: 4.0,
+                ),
                 child: const Card(
                   child: ListTile(
                     title: Text(
@@ -83,7 +84,6 @@ class Dashboard extends StatelessWidget {
                           ),
                         ),
                         Divider(
-                          // Add a line after "Sunset 6:08 PM"
                           color: Color(0xFF367750),
                           thickness: 1,
                           height: 20,
@@ -97,7 +97,6 @@ class Dashboard extends StatelessWidget {
                         ),
                         SizedBox(height: 3),
                         Row(
-                          // Add a Row for "Today would be a bad day for:" and "APPLYING PESTICIDES"
                           children: [
                             Text(
                               'Today would be a bad day for: ',
@@ -122,13 +121,52 @@ class Dashboard extends StatelessWidget {
                 ),
               ),
 
-              // Crop Analysis
+              // Analyze your crop title
               Container(
-                margin: const EdgeInsets.all(16.0),
-                child: const Card(
-                  child: ListTile(
-                    title: Text('Crop Analysis'),
-                    subtitle: Text('Crop analysis data'),
+                margin: const EdgeInsets.only(
+                  left: 16.0,
+                  top: 8.0,
+                  right: 16.0,
+                  bottom: 0,
+                ),
+                child: const Align(
+                  alignment: Alignment.centerLeft,
+                  child: Text(
+                    'Analyze your crop',
+                    style: TextStyle(
+                      fontSize: 24,
+                      color: Colors.white,
+                    ),
+                  ),
+                ),
+              ),
+
+              // Analyze crop card details
+              Container(
+                margin: const EdgeInsets.symmetric(
+                  horizontal: 16.0,
+                  vertical: 4.0,
+                ),
+                child: Card(
+                  child: Column(
+                    children: [
+                      Image.asset(
+                        'assets/images/cropAnalysis.png',
+                        fit: BoxFit.cover,
+                      ),
+                      const SizedBox(height: 8.0),
+                      ElevatedButton(
+                        onPressed: () {
+                          // Add functionality for the Analyze button
+                        },
+                        style: ElevatedButton.styleFrom(
+                          foregroundColor: Colors.white,
+                          backgroundColor: const Color(0xFF367750),
+                        ),
+                        child: const Text('Analyze'),
+                      ),
+                      const SizedBox(height: 8.0), //padding below button
+                    ],
                   ),
                 ),
               ),
@@ -144,9 +182,9 @@ class Dashboard extends StatelessWidget {
                 ),
               ),
 
+              // Cultivation Tips
               const Row(
                 children: [
-                  // Cultivation Tips
                   Expanded(
                     child: Card(
                       margin: EdgeInsets.all(16.0),
