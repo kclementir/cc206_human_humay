@@ -17,18 +17,8 @@ class Dashboard extends StatelessWidget {
         ),
         backgroundColor: Colors.white,
       ),
-      // body: Container(
-      //   constraints: const BoxConstraints.expand(),
-      //   decoration: const BoxDecoration(
-      //     image: DecorationImage(
-      //       image: AssetImage('assets/images/bg2.png'),
-      //       fit: BoxFit.fitWidth,
-      //     ),
-      //   ),
-      //Background Color
       body: Container(
-        constraints: const BoxConstraints
-            .expand(), // Ensure the container takes up the whole screen
+        constraints: const BoxConstraints.expand(),
         decoration: const BoxDecoration(
           gradient: LinearGradient(
             begin: Alignment.topCenter,
@@ -39,21 +29,65 @@ class Dashboard extends StatelessWidget {
             ],
           ),
         ),
-        child: const SingleChildScrollView(
+        child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              // Weather
-              Card(
-                margin: EdgeInsets.all(16.0),
+              // Weather title with padding at the top
+              Container(
+                padding: const EdgeInsets.only(top: 16.0),
+                child: const Align(
+                  alignment: Alignment.centerLeft,
+                  child: Padding(
+                    padding: EdgeInsets.only(left: 16.0), // Adjust left padding
+                    child: Text(
+                      'Weather',
+                      style: TextStyle(
+                        fontSize: 24,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+
+              // Weather details card with adjusted margin
+              const Card(
+                margin: EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
                 child: ListTile(
-                  title: Text('Weather'),
-                  subtitle: Text('Current weather information'),
+                  title: Text('Weather Janiuay, Western Visayas 25 May'),
+                  subtitle: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text('29°C',
+                          style: TextStyle(
+                              fontSize: 48, fontWeight: FontWeight.bold)),
+                      SizedBox(height: 10),
+                      Text('Sunset 6:08 PM',
+                          style: TextStyle(
+                              fontSize: 24, fontWeight: FontWeight.bold)),
+                      SizedBox(height: 10),
+                      Text('It is cloudy today.',
+                          style: TextStyle(fontSize: 24)),
+                      SizedBox(height: 20),
+                      Text('Today would be a bad day for:',
+                          style: TextStyle(
+                              fontSize: 24, fontWeight: FontWeight.bold)),
+                      SizedBox(height: 10),
+                      Text('APPLYING PESTICIDES',
+                          style: TextStyle(
+                              fontSize: 24,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.red)),
+                      SizedBox(height: 20),
+                    ],
+                  ),
                 ),
               ),
 
               // Crop Analysis
-              Card(
+              const Card(
                 margin: EdgeInsets.all(16.0),
                 child: ListTile(
                   title: Text('Crop Analysis'),
@@ -62,7 +96,7 @@ class Dashboard extends StatelessWidget {
               ),
 
               // Analysis History
-              Card(
+              const Card(
                 margin: EdgeInsets.all(16.0),
                 child: ListTile(
                   title: Text('History of Analysis'),
@@ -70,7 +104,7 @@ class Dashboard extends StatelessWidget {
                 ),
               ),
 
-              Row(
+              const Row(
                 children: [
                   // Cultivation Tips
                   Expanded(
