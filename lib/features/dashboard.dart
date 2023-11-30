@@ -287,8 +287,6 @@ class ImageContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        print('Container tapped for image: $imagePath');
-
         if (imagePath == 'assets/images/cultivation.png') {
           navigateToScreen(context, const CultivationScreen());
         } else if (imagePath == 'assets/images/pests.png') {
@@ -304,8 +302,6 @@ class ImageContainer extends StatelessWidget {
           height: 100,
           child: InkWell(
             onTap: () {
-              print('Image tapped for: $imagePath');
-
               if (imagePath == 'assets/images/cultivation.png') {
                 navigateToScreen(context, const CultivationScreen());
               } else if (imagePath == 'assets/images/pests.png') {
