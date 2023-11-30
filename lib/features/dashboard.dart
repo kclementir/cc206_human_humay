@@ -5,6 +5,14 @@ class Dashboard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    List<String> yourImageList = [
+      'assets/images/leaf1.jpg',
+      'assets/images/leaf2.jpg',
+      'assets/images/leaf3.jpg',
+      'assets/images/leaf4.jpg',
+      'assets/images/leaf5.jpg',
+    ];
+
     return Scaffold(
       appBar: AppBar(
         title: const Text(
@@ -171,14 +179,73 @@ class Dashboard extends StatelessWidget {
                 ),
               ),
 
-              // Analysis History
+              // History of Analysis Title
               Container(
-                margin: const EdgeInsets.all(16.0),
-                child: const Card(
-                  child: ListTile(
-                    title: Text('History of Analysis'),
-                    subtitle: Text('Analysis history data'),
-                  ),
+                margin: const EdgeInsets.only(
+                  left: 16.0,
+                  top: 8.0,
+                  right: 16.0,
+                  bottom: 0,
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    const Align(
+                      alignment: Alignment.centerLeft,
+                      child: Text(
+                        'History of Analysis',
+                        style: TextStyle(
+                          fontSize: 24,
+                          color: Colors.white,
+                        ),
+                      ),
+                    ),
+                    TextButton(
+                      onPressed: () {
+                        // Add your View All button action here
+                      },
+                      child: const Text(
+                        'View All',
+                        style: TextStyle(
+                          fontSize: 8,
+                          color: Colors.white, // Adjust the color as needed
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+
+              // Analysis History images in a row
+              Container(
+                margin: const EdgeInsets.symmetric(
+                  horizontal: 16.0,
+                  vertical: 4.0,
+                ),
+                height: 100, // Set the height of the image row
+                child: ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  itemCount: yourImageList.length,
+                  itemBuilder: (context, index) {
+                    return GestureDetector(
+                      onTap: () {
+                        // Add functionality to open the image when clicked
+                        // You can use Navigator or any other method to navigate to the full image view
+                      },
+                      child: Container(
+                        margin: const EdgeInsets.only(right: 8.0),
+                        width: 100, // Set the width of each image
+                        height: 100, // Set the height of each image
+                        decoration: BoxDecoration(
+                          image: DecorationImage(
+                            image: AssetImage(yourImageList[index]),
+                            fit: BoxFit.cover,
+                          ),
+                          borderRadius: BorderRadius.circular(8.0),
+                        ),
+                      ),
+                    );
+                  },
                 ),
               ),
 
