@@ -1,3 +1,6 @@
+import 'package:cc206_human_humay/components/cultivation.dart';
+import 'package:cc206_human_humay/components/pests.dart';
+import 'package:cc206_human_humay/components/prediction.dart';
 import 'package:flutter/material.dart';
 
 class Dashboard extends StatelessWidget {
@@ -249,44 +252,75 @@ class Dashboard extends StatelessWidget {
                 ),
               ),
 
-              // Cultivation Tips
+              // Cultivation Tips, Pests and Diseases, Crop Yield Detection
+
+              //Cultivation
               const Row(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Expanded(
-                    child: Card(
-                      margin: EdgeInsets.all(16.0),
-                      child: ListTile(
-                        title: Text('Cultivation Tips'),
-                        subtitle: Text('Helpful tips for cultivation'),
-                      ),
-                    ),
-                  ),
-
-                  // Pests and Diseases
-                  Expanded(
-                    child: Card(
-                      margin: EdgeInsets.all(16.0),
-                      child: ListTile(
-                        title: Text('Pests and Diseases Info'),
-                        subtitle:
-                            Text('Information on common pests and diseases'),
-                      ),
-                    ),
-                  ),
-
-                  // Crop Yield Detection
-                  Expanded(
-                    child: Card(
-                      margin: EdgeInsets.all(16.0),
-                      child: ListTile(
-                        title: Text('Crop Yield Detection'),
-                        subtitle: Text('Crop yield data and analysis'),
-                      ),
-                    ),
-                  ),
+                  ImageContainer('assets/images/cultivation.png'),
+                  ImageContainer('assets/images/pests.png'),
+                  ImageContainer('assets/images/prediction.png'),
                 ],
               ),
             ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class ImageContainer extends StatelessWidget {
+  final String imagePath;
+
+  const ImageContainer(this.imagePath, {Key? key}) : super(key: key);
+
+  void navigateToScreen(BuildContext context, Widget screen) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => screen),
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: () {
+        print('Container tapped for image: $imagePath');
+
+        if (imagePath == 'assets/images/cultivation.png') {
+          navigateToScreen(context, const CultivationScreen());
+        } else if (imagePath == 'assets/images/pests.png') {
+          navigateToScreen(context, const PestsScreen());
+        } else if (imagePath == 'assets/images/prediction.png') {
+          navigateToScreen(context, const PredictionScreen());
+        }
+      },
+      child: Card(
+        margin: const EdgeInsets.all(16.0),
+        child: SizedBox(
+          width: 100,
+          height: 100,
+          child: InkWell(
+            onTap: () {
+              print('Image tapped for: $imagePath');
+
+              if (imagePath == 'assets/images/cultivation.png') {
+                navigateToScreen(context, const CultivationScreen());
+              } else if (imagePath == 'assets/images/pests.png') {
+                navigateToScreen(context, const PestsScreen());
+              } else if (imagePath == 'assets/images/prediction.png') {
+                navigateToScreen(context, const PredictionScreen());
+              }
+            },
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(8.0),
+              child: Image.asset(
+                imagePath,
+                fit: BoxFit.cover,
+              ),
+            ),
           ),
         ),
       ),
