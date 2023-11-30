@@ -66,6 +66,15 @@ flutter:
     - assets/images/bg1.png
     - assets/images/cloud.png
     - assets/images/cropAnalysis.png
+    - assets/images/leaf1.jpg
+    - assets/images/leaf2.jpg
+    - assets/images/leaf3.jpg
+    - assets/images/leaf4.jpg
+    - assets/images/leaf5.jpg
+    - assets/images/prediction.png
+    - assets/images/pests.png
+    - assets/images/cultivation.png
+
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
