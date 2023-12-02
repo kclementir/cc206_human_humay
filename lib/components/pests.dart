@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class PestsScreen extends StatelessWidget {
-  const PestsScreen({Key? key});
+  const PestsScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

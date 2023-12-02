@@ -1,10 +1,11 @@
+import 'package:cc206_human_humay/components/analyze_screen.dart';
+import 'package:flutter/material.dart';
 import 'package:cc206_human_humay/components/cultivation.dart';
 import 'package:cc206_human_humay/components/pests.dart';
 import 'package:cc206_human_humay/components/prediction.dart';
-import 'package:flutter/material.dart';
 
 class Dashboard extends StatelessWidget {
-  const Dashboard({Key? key}) : super(key: key);
+  const Dashboard({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -168,7 +169,11 @@ class Dashboard extends StatelessWidget {
                       const SizedBox(height: 8.0),
                       ElevatedButton(
                         onPressed: () {
-                          // Add functionality for the Analyze button
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const AnalyzeScreen()),
+                          );
                         },
                         style: ElevatedButton.styleFrom(
                           foregroundColor: Colors.white,
@@ -274,7 +279,7 @@ class Dashboard extends StatelessWidget {
 class ImageContainer extends StatelessWidget {
   final String imagePath;
 
-  const ImageContainer(this.imagePath, {Key? key}) : super(key: key);
+  const ImageContainer(this.imagePath, {super.key});
 
   void navigateToScreen(BuildContext context, Widget screen) {
     Navigator.push(

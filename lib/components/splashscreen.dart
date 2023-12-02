@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:cc206_human_humay/login_page.dart';
 
 class MySplash extends StatefulWidget {
-  const MySplash({Key? key}) : super(key: key);
+  const MySplash({super.key});
 
   @override
+  // ignore: library_private_types_in_public_api
   _MySplashState createState() => _MySplashState();
 }
 

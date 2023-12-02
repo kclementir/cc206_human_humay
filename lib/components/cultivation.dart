@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class CultivationScreen extends StatelessWidget {
-  const CultivationScreen({Key? key});
+  const CultivationScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

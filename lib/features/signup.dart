@@ -2,7 +2,7 @@ import 'package:cc206_human_humay/login_page.dart';
 import 'package:flutter/material.dart';
 
 class SignUpPage extends StatelessWidget {
-  const SignUpPage({Key? key}) : super(key: key);
+  const SignUpPage({super.key});
 
   void _navigateToLogin(BuildContext context) {
     Navigator.push(
