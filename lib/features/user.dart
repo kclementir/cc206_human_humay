@@ -1,7 +1,10 @@
+// User.dart
+
 import 'package:flutter/material.dart';
+import 'ManagePage.dart';
 
 void main() {
-  runApp( User());
+  runApp(User());
 }
 
 class User extends StatelessWidget {
@@ -10,7 +13,7 @@ class User extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false, //remove debug banner
+      debugShowCheckedModeBanner: false, // remove debug banner
       home: Scaffold(
         appBar: AppBar(
           title: const Text(
@@ -23,10 +26,9 @@ class User extends StatelessWidget {
           ),
           backgroundColor: Colors.white,
         ),
-        //Background Color
+        // Background Color
         body: Container(
-          constraints: const BoxConstraints
-              .expand(), // Ensure the container takes up the whole screen
+          constraints: const BoxConstraints.expand(), // Ensure the container takes up the whole screen
           decoration: const BoxDecoration(
             gradient: LinearGradient(
               begin: Alignment.topCenter,
@@ -41,29 +43,43 @@ class User extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                //User Profile
+                // User Profile
                 Card(
                   margin: EdgeInsets.all(16.0),
                   child: ListTile(
                     leading: Image.asset(
                       'assets/images/farmer.png',
-                      width: 55,
-                      height: 55,
-                     ),
+                      width: 70,
+                      height: 70,
+                    ),
                     title: Text('User Profile'),
-                    subtitle: Text('Manage Account'),
+                    subtitle: ElevatedButton(
+                      onPressed: () {
+                        // Navigate to ManagePage when the button is pressed
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => ManagePage()),
+                        );
+                      },
+                      style: ElevatedButton.styleFrom(
+                        primary: Colors.white, // set the background color
+                        onPrimary: Colors.green, // set the text color
+                        side: BorderSide(color: Colors.green), // set the border color
+                      ),
+                      child: Text('Manage Account'),
+                    ),
                   ),
                 ),
 
-                //Feeback
+                // Feedback
                 Card(
                   margin: EdgeInsets.all(16.0),
                   child: ListTile(
                     leading: Image.asset(
                       'assets/images/likstars.png',
-                      width: 55,
-                      height: 55,
-                     ),
+                      width: 70,
+                      height: 70,
+                    ),
                     title: Text("How's your experience with HUMÁNHUMAY?"),
                     subtitle: Text('Give Feedback'),
                   ),
@@ -75,9 +91,9 @@ class User extends StatelessWidget {
                   child: ListTile(
                     leading: Image.asset(
                       'assets/images/share.png',
-                      width: 55,
-                      height: 55,
-                     ),
+                      width: 70,
+                      height: 70,
+                    ),
                     title: Text("Let's grow rice crops together!"),
                     subtitle: Text('Share'),
                   ),
