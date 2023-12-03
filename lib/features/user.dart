@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const User());
+  runApp( User());
 }
 
 class User extends StatelessWidget {
@@ -37,7 +37,7 @@ class User extends StatelessWidget {
               ],
             ),
           ),
-          child: const SingleChildScrollView(
+          child: SingleChildScrollView(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
@@ -45,6 +45,11 @@ class User extends StatelessWidget {
                 Card(
                   margin: EdgeInsets.all(16.0),
                   child: ListTile(
+                    leading: Image.asset(
+                      'assets/images/farmer.png',
+                      width: 55,
+                      height: 55,
+                     ),
                     title: Text('User Profile'),
                     subtitle: Text('Manage Account'),
                   ),
@@ -54,6 +59,11 @@ class User extends StatelessWidget {
                 Card(
                   margin: EdgeInsets.all(16.0),
                   child: ListTile(
+                    leading: Image.asset(
+                      'assets/images/likstars.png',
+                      width: 55,
+                      height: 55,
+                     ),
                     title: Text("How's your experience with HUMÁNHUMAY?"),
                     subtitle: Text('Give Feedback'),
                   ),
@@ -63,6 +73,11 @@ class User extends StatelessWidget {
                 Card(
                   margin: EdgeInsets.all(16.0),
                   child: ListTile(
+                    leading: Image.asset(
+                      'assets/images/share.png',
+                      width: 55,
+                      height: 55,
+                     ),
                     title: Text("Let's grow rice crops together!"),
                     subtitle: Text('Share'),
                   ),
