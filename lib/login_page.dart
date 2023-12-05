@@ -3,7 +3,7 @@ import 'package:cc206_human_humay/components/tabs.dart';
 import 'package:cc206_human_humay/features/signup.dart';
 
 class LoginPage extends StatelessWidget {
-  const LoginPage({Key? key}) : super(key: key);
+  const LoginPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -48,7 +48,7 @@ class LoginPage extends StatelessWidget {
 }
 
 class Login extends StatelessWidget {
-  Login({Key? key, required this.title}) : super(key: key);
+  Login({super.key, required this.title});
 
   final String title;
 
