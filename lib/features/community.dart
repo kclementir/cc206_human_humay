@@ -2,7 +2,7 @@ import 'package:cc206_human_humay/features/writepost.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(Community());
+  runApp(const Community());
 }
 
 class Community extends StatelessWidget {
@@ -27,7 +27,7 @@ class Community extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: IconButton(
-                icon: Icon(Icons.share, color: Colors.green),
+                icon: const Icon(Icons.share, color: Colors.green),
                 onPressed: () {
                   // Add your share button logic here
                 },
@@ -61,7 +61,7 @@ class Community extends StatelessWidget {
                           borderRadius: BorderRadius.circular(12.0),
                         ),
                         padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                        child: TextField(
+                        child: const TextField(
                           decoration: InputDecoration(
                             hintText: 'Search Community',
                             hintStyle: TextStyle(color: Colors.grey),
@@ -72,14 +72,14 @@ class Community extends StatelessWidget {
                         ),
                       ),
                     ),
-                    SizedBox(width: 10),
-                    Icon(Icons.notifications, color: Colors.white),
-                    SizedBox(width: 10),
-                    Icon(Icons.more_vert, color: Colors.white),
+                    const SizedBox(width: 10),
+                    const Icon(Icons.notifications, color: Colors.white),
+                    const SizedBox(width: 10),
+                    const Icon(Icons.more_vert, color: Colors.white),
                   ],
                 ),
 
-                SizedBox(height: 20),
+                const SizedBox(height: 20),
 
                 // Adding two Card widgets with image below
                 _buildPostCard(
@@ -88,7 +88,7 @@ class Community extends StatelessWidget {
                   'assets/images/jub.jpg',
                 ),
 
-                SizedBox(height: 16),
+                const SizedBox(height: 16),
 
                 _buildPostCard(
                   'Keben Hokseng',
@@ -105,11 +105,11 @@ class Community extends StatelessWidget {
           onPressed: () {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => writepost()),
-              );
+              MaterialPageRoute(builder: (context) => const writepost()),
+            );
           },
           backgroundColor: Colors.green,
-          child: Icon(Icons.edit),
+          child: const Icon(Icons.edit),
         ),
       ),
     );
@@ -133,15 +133,15 @@ class Community extends StatelessWidget {
                 children: [
                   Text(
                     username,
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  SizedBox(height: 8),
+                  const SizedBox(height: 8),
                   Text(
                     postText,
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 16,
                       color: Colors.grey,
                     ),
@@ -152,7 +152,7 @@ class Community extends StatelessWidget {
             Expanded(
               child: Center(
                 child: Container(
-                  margin: EdgeInsets.symmetric(horizontal: 16),
+                  margin: const EdgeInsets.symmetric(horizontal: 16),
                   height: 250,
                   width: 300,
                   decoration: BoxDecoration(
@@ -165,24 +165,24 @@ class Community extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: 8),
+            const SizedBox(height: 8),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 IconButton(
-                  icon: Icon(Icons.thumb_up, color: Colors.green),
+                  icon: const Icon(Icons.thumb_up, color: Colors.green),
                   onPressed: () {
                     // Handle like button press
                   },
                 ),
                 IconButton(
-                  icon: Icon(Icons.thumb_down, color: Colors.green),
+                  icon: const Icon(Icons.thumb_down, color: Colors.green),
                   onPressed: () {
                     // Handle unlike button press
                   },
                 ),
                 IconButton(
-                  icon: Icon(Icons.comment, color: Colors.green),
+                  icon: const Icon(Icons.comment, color: Colors.green),
                   onPressed: () {
                     // Handle comment button press
                   },
