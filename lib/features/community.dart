@@ -84,7 +84,7 @@ class Community extends StatelessWidget {
                 // Adding two Card widgets with image below
                 _buildPostCard(
                   'Job Distor',
-                  'Good Morning mga kababayan! Magtatanong lang sana ako kung anong klasing peste ito saming lupain?',
+                  'Anong insekto ito mga kaigan?',
                   'assets/images/jub.jpg',
                 ),
 
@@ -92,7 +92,7 @@ class Community extends StatelessWidget {
 
                 _buildPostCard(
                   'Keben Hokseng',
-                  'Hello... Gus2 q lang itanong kung ano itong yellow sa mga pananim nmin..hehe tnx everyone..',
+                  'What causes this?',
                   'assets/images/keben.png',
                 ),
 
@@ -115,83 +115,98 @@ class Community extends StatelessWidget {
     );
   }
 
-  Widget _buildPostCard(String username, String postText, String imagePath) {
-    return Card(
-      elevation: 5,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(12.0),
-      ),
-      child: SizedBox(
-        height: 500, // Adjust the height of the card as needed
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            Padding(
-              padding: const EdgeInsets.all(16.0),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    username,
-                    style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  SizedBox(height: 8),
-                  Text(
-                    postText,
-                    style: TextStyle(
-                      fontSize: 16,
-                      color: Colors.grey,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            Expanded(
-              child: Center(
-                child: Container(
-                  margin: EdgeInsets.symmetric(horizontal: 16),
-                  height: 250,
-                  width: 300,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(8.0),
-                    image: DecorationImage(
-                      image: AssetImage(imagePath),
-                      fit: BoxFit.cover,
-                    ),
-                  ),
-                ),
-              ),
-            ),
-            SizedBox(height: 8),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+ Widget _buildPostCard(String username, String postText,String imagePath) {
+  return Card(
+    elevation: 5,
+    shape: RoundedRectangleBorder(
+      borderRadius: BorderRadius.circular(12.0),
+    ),
+    child: SizedBox(
+      height: 500, // Adjust the height of the card as needed
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween, // Add this line
               children: [
-                IconButton(
-                  icon: Icon(Icons.thumb_up, color: Colors.green),
-                  onPressed: () {
-                    // Handle like button press
-                  },
+                Row(
+                  children: [
+                    CircleAvatar(
+                      backgroundColor: Colors.green,
+                      child: Icon(Icons.account_circle, color: Colors.white),
+                    ),
+                    SizedBox(width: 12), // Increase the spacing
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          username,
+                          style: TextStyle(
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        SizedBox(height: 4), // Increase the spacing
+                        Text(
+                          postText,
+                          style: TextStyle(
+                            fontSize: 16,
+                            color: Colors.grey,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
                 ),
-                IconButton(
-                  icon: Icon(Icons.thumb_down, color: Colors.green),
-                  onPressed: () {
-                    // Handle unlike button press
-                  },
-                ),
-                IconButton(
-                  icon: Icon(Icons.comment, color: Colors.green),
-                  onPressed: () {
-                    // Handle comment button press
-                  },
-                ),
+                // Add any additional widgets here if needed
               ],
             ),
-          ],
-        ),
+          ),
+          Expanded(
+            child: Center(
+              child: Container(
+                margin: EdgeInsets.symmetric(horizontal: 16),
+                height: 250,
+                width: 300,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(8.0),
+                  image: DecorationImage(
+                    image: AssetImage(imagePath),
+                    fit: BoxFit.cover,
+                  ),
+                ),
+              ),
+            ),
+          ),
+          SizedBox(height: 8),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              IconButton(
+                icon: Icon(Icons.thumb_up, color: Colors.green),
+                onPressed: () {
+                  // Handle like button press
+                },
+              ),
+              IconButton(
+                icon: Icon(Icons.thumb_down, color: Colors.green),
+                onPressed: () {
+                  // Handle unlike button press
+                },
+              ),
+              IconButton(
+                icon: Icon(Icons.comment, color: Colors.green),
+                onPressed: () {
+                  // Handle comment button press
+                },
+              ),
+            ],
+          ),
+        ],
       ),
-    );
-  }
+    ),
+  );
+}
 }
