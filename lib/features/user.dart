@@ -1,4 +1,6 @@
+import 'package:cc206_human_humay/login_page.dart';
 import 'package:flutter/material.dart';
+import 'package:cc206_human_humay/features/manage_page.dart';
 
 void main() {
   runApp(const User());
@@ -10,7 +12,7 @@ class User extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false, //remove debug banner
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
           title: const Text(
@@ -23,10 +25,8 @@ class User extends StatelessWidget {
           ),
           backgroundColor: Colors.white,
         ),
-        //Background Color
         body: Container(
-          constraints: const BoxConstraints
-              .expand(), // Ensure the container takes up the whole screen
+          constraints: const BoxConstraints.expand(),
           decoration: const BoxDecoration(
             gradient: LinearGradient(
               begin: Alignment.topCenter,
@@ -37,41 +37,112 @@ class User extends StatelessWidget {
               ],
             ),
           ),
-          child: const SingleChildScrollView(
+          child: SingleChildScrollView(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                //User Profile
+                // User Profile
                 Card(
-                  margin: EdgeInsets.all(16.0),
+                  margin: const EdgeInsets.all(16.0),
                   child: ListTile(
-                    title: Text('User Profile'),
-                    subtitle: Text('Manage Account'),
+                    leading: Image.asset(
+                      'assets/images/farmer.png',
+                      width: 70,
+                      height: 70,
+                    ),
+                    title: const Text('User Profile'),
+                    subtitle: ElevatedButton(
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const ManagePage(),
+                          ),
+                        );
+                      },
+                      style: ElevatedButton.styleFrom(
+                        foregroundColor: Colors.green,
+                        backgroundColor: Colors.white,
+                        side: const BorderSide(color: Colors.green),
+                      ),
+                      child: const Text('Manage Account'),
+                    ),
                   ),
                 ),
 
-                //Feeback
+                // Feedback
                 Card(
-                  margin: EdgeInsets.all(16.0),
+                  margin: const EdgeInsets.all(16.0),
                   child: ListTile(
-                    title: Text("How's your experience with HUMÁNHUMAY?"),
-                    subtitle: Text('Give Feedback'),
+                    leading: Image.asset(
+                      'assets/images/likstars.png',
+                      width: 70,
+                      height: 70,
+                    ),
+                    title: const Text(
+                      "How's your experience with HUMÁNHUMAY?",
+                    ),
+                    subtitle: const Text('Give Feedback'),
                   ),
                 ),
 
                 // Share
                 Card(
-                  margin: EdgeInsets.all(16.0),
+                  margin: const EdgeInsets.all(16.0),
                   child: ListTile(
-                    title: Text("Let's grow rice crops together!"),
-                    subtitle: Text('Share'),
+                    leading: Image.asset(
+                      'assets/images/share.png',
+                      width: 70,
+                      height: 70,
+                    ),
+                    title: const Text("Let's grow rice crops together!"),
+                    subtitle: const Text('Share'),
                   ),
                 ),
-              ], // Close the children list
-            ), // Close the Column
-          ), // Close the SingleChildScrollView
-        ), // Close the Container
-      ), // Close the Scaffold
+
+                // Sign Out Button
+                // Sign Out Button
+                OutlinedButton(
+                  onPressed: () {
+                    // Add any additional sign-out logic here if needed
+                    Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const LoginPage(),
+                      ),
+                    );
+                  },
+                  style: OutlinedButton.styleFrom(
+                    side: const BorderSide(
+                        color: Color.fromARGB(255, 255, 255, 255)),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(8.0),
+                    ),
+                  ),
+                  child: const Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Icon(
+                        Icons.exit_to_app,
+                        color: Color.fromARGB(
+                            255, 255, 255, 255), // Set icon color to red
+                      ),
+                      SizedBox(width: 8.0),
+                      Text(
+                        'Sign Out',
+                        style: TextStyle(
+                          color: Color.fromARGB(255, 255, 255, 255),
+                          fontSize: 16.0,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
     );
   }
 }
