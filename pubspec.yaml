@@ -75,6 +75,12 @@ flutter:
     - assets/images/prediction.png
     - assets/images/pests.png
     - assets/images/cultivation.png
+    - assets/images/farmer.png
+    - assets/images/likstars.png
+    - assets/images/share.png
+    - assets/images/keben.png
+    - assets/images/jub.jpg
+    - assets/images/rechie.jpg
 
   #   - images/a_dot_ham.jpeg
 

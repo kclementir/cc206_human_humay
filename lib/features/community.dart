@@ -1,8 +1,8 @@
-import 'package:cc206_human_humay/features/writepost.dart';
 import 'package:flutter/material.dart';
+import 'package:cc206_human_humay/features/writepost.dart';
 
 void main() {
-  runApp(const Community());
+  runApp(Community());
 }
 
 class Community extends StatelessWidget {
@@ -10,7 +10,7 @@ class Community extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
@@ -27,7 +27,7 @@ class Community extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: IconButton(
-                icon: const Icon(Icons.share, color: Colors.green),
+                icon: Icon(Icons.share, color: Colors.green),
                 onPressed: () {
                   // Add your share button logic here
                 },
@@ -61,7 +61,7 @@ class Community extends StatelessWidget {
                           borderRadius: BorderRadius.circular(12.0),
                         ),
                         padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                        child: const TextField(
+                        child: TextField(
                           decoration: InputDecoration(
                             hintText: 'Search Community',
                             hintStyle: TextStyle(color: Colors.grey),
@@ -72,23 +72,24 @@ class Community extends StatelessWidget {
                         ),
                       ),
                     ),
-                    const SizedBox(width: 10),
-                    const Icon(Icons.notifications, color: Colors.white),
-                    const SizedBox(width: 10),
-                    const Icon(Icons.more_vert, color: Colors.white),
+                    SizedBox(width: 10),
+                    Icon(Icons.notifications, color: Colors.white),
+                    SizedBox(width: 10),
+                    Icon(Icons.more_vert, color: Colors.white),
                   ],
                 ),
 
-                const SizedBox(height: 20),
+                SizedBox(height: 20),
 
-                // Adding two Card widgets with image below
+                // Adding three Card widgets with different images below
                 _buildPostCard(
                   'Job Distor',
                   'Good Morning mga kababayan! Magtatanong lang sana ako kung anong klasing peste ito saming lupain?',
                   'assets/images/jub.jpg',
+                  'assets/images/usercom1.png',
                 ),
 
-                const SizedBox(height: 16),
+                SizedBox(height: 16),
 
                 _buildPostCard(
                   'Keben Hokseng',
@@ -105,24 +106,25 @@ class Community extends StatelessWidget {
           onPressed: () {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => const writepost()),
+              MaterialPageRoute(builder: (context) => writepost()),
             );
           },
           backgroundColor: Colors.green,
-          child: const Icon(Icons.edit),
+          child: Icon(Icons.edit),
         ),
       ),
     );
   }
 
-  Widget _buildPostCard(String username, String postText, String imagePath) {
+  Widget _buildPostCard(
+      String username, String postText, String imagePath, String avatarImage) {
     return Card(
       elevation: 5,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(12.0),
       ),
       child: SizedBox(
-        height: 500, // Adjust the height of the card as needed
+        height: 500,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
@@ -133,15 +135,15 @@ class Community extends StatelessWidget {
                 children: [
                   Text(
                     username,
-                    style: const TextStyle(
+                    style: TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  const SizedBox(height: 8),
+                  SizedBox(height: 8),
                   Text(
                     postText,
-                    style: const TextStyle(
+                    style: TextStyle(
                       fontSize: 16,
                       color: Colors.grey,
                     ),
@@ -152,7 +154,7 @@ class Community extends StatelessWidget {
             Expanded(
               child: Center(
                 child: Container(
-                  margin: const EdgeInsets.symmetric(horizontal: 16),
+                  margin: EdgeInsets.symmetric(horizontal: 16),
                   height: 250,
                   width: 300,
                   decoration: BoxDecoration(
@@ -165,24 +167,24 @@ class Community extends StatelessWidget {
                 ),
               ),
             ),
-            const SizedBox(height: 8),
+            SizedBox(height: 8),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 IconButton(
-                  icon: const Icon(Icons.thumb_up, color: Colors.green),
+                  icon: Icon(Icons.thumb_up, color: Colors.green),
                   onPressed: () {
                     // Handle like button press
                   },
                 ),
                 IconButton(
-                  icon: const Icon(Icons.thumb_down, color: Colors.green),
+                  icon: Icon(Icons.thumb_down, color: Colors.green),
                   onPressed: () {
                     // Handle unlike button press
                   },
                 ),
                 IconButton(
-                  icon: const Icon(Icons.comment, color: Colors.green),
+                  icon: Icon(Icons.comment, color: Colors.green),
                   onPressed: () {
                     // Handle comment button press
                   },

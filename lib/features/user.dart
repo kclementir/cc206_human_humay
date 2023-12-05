@@ -1,6 +1,6 @@
 import 'package:cc206_human_humay/login_page.dart';
 import 'package:flutter/material.dart';
-import 'package:cc206_human_humay/features/manage_page.dart';
+import 'ManagePage.dart';
 
 void main() {
   runApp(const User());
@@ -26,7 +26,8 @@ class User extends StatelessWidget {
           backgroundColor: Colors.white,
         ),
         body: Container(
-          constraints: const BoxConstraints.expand(),
+          constraints: const BoxConstraints
+              .expand(), // Ensure the container takes up the whole screen
           decoration: const BoxDecoration(
             gradient: LinearGradient(
               begin: Alignment.topCenter,
@@ -55,15 +56,14 @@ class User extends StatelessWidget {
                       onPressed: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(
-                            builder: (context) => const ManagePage(),
-                          ),
+                          MaterialPageRoute(builder: (context) => ManagePage()),
                         );
                       },
                       style: ElevatedButton.styleFrom(
-                        foregroundColor: Colors.green,
-                        backgroundColor: Colors.white,
-                        side: const BorderSide(color: Colors.green),
+                        primary: Colors.white, // set the background color
+                        onPrimary: Colors.green, // set the text color
+                        side: BorderSide(
+                            color: Colors.green), // set the border color
                       ),
                       child: const Text('Manage Account'),
                     ),
@@ -79,10 +79,8 @@ class User extends StatelessWidget {
                       width: 70,
                       height: 70,
                     ),
-                    title: const Text(
-                      "How's your experience with HUMÁNHUMAY?",
-                    ),
-                    subtitle: const Text('Give Feedback'),
+                    title: Text("How's your experience with HUMÁNHUMAY?"),
+                    subtitle: Text('Give Feedback'),
                   ),
                 ),
 
