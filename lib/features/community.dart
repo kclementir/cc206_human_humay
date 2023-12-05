@@ -95,6 +95,16 @@ class TabBarDemo extends StatelessWidget {
               const SizedBox(height: 20),
 
               // Adding three Card widgets with different images below
+
+              _buildPostCard(
+                'Mark Lee',
+                "Can anyone tell me what this is? I found it on my daddy's rice plant.",
+                'assets/images/pests1.jpg',
+                'assets/images/mark.jpg',
+              ),
+
+              const SizedBox(height: 16),
+
               _buildPostCard(
                 'Job Distor',
                 'Good Morning mga kababayan! Magtatanong lang sana ako kung anong klasing peste ito saming lupain?',
