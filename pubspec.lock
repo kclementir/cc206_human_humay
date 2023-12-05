@@ -191,7 +191,19 @@ packages:
       sha256: "3c74dbf8763d36539f114c799d8a2d87343b5067e9d796ca22b5eb8437090ee3"
       url: "https://pub.dev"
     source: hosted
+<<<<<<< Updated upstream
     version: "1.9.1"
+=======
+    version: "1.10.0"
+  page_view_indicators:
+    dependency: "direct main"
+    description:
+      name: page_view_indicators
+      sha256: d2ebf6c26d1b065f137e88a2b88181dea6b96d7a34abe9a237fbf214888d0f3f
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.0.0"
+>>>>>>> Stashed changes
   path:
     dependency: transitive
     description:
@@ -318,5 +330,9 @@ packages:
     source: hosted
     version: "3.1.2"
 sdks:
+<<<<<<< Updated upstream
   dart: ">=3.0.2 <4.0.0"
+=======
+  dart: ">=3.2.0 <4.0.0"
+>>>>>>> Stashed changes
   flutter: ">=2.5.0"
