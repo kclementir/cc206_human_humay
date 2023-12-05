@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:cc206_human_humay/features/community.dart';
 
 void main() {
-  runApp(const writepost());
+  runApp(const WritePost());
 }
 
-class writepost extends StatelessWidget {
-  const writepost({super.key});
+class WritePost extends StatelessWidget {
+  const WritePost({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -77,12 +77,12 @@ class MyHomePage extends StatelessWidget {
               onPressed: () {
                 // Add functionality to post
               },
-              child: const Text('Post'),
               style: ElevatedButton.styleFrom(
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(10.0),
                 ),
               ),
+              child: const Text('Post'),
             ),
           ],
         ),

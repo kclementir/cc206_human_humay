@@ -1,6 +1,6 @@
+import 'package:cc206_human_humay/features/manage_page.dart';
 import 'package:cc206_human_humay/login_page.dart';
 import 'package:flutter/material.dart';
-import 'ManagePage.dart';
 
 void main() {
   runApp(const User());
@@ -56,13 +56,14 @@ class User extends StatelessWidget {
                       onPressed: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => ManagePage()),
+                          MaterialPageRoute(
+                              builder: (context) => const ManagePage()),
                         );
                       },
                       style: ElevatedButton.styleFrom(
-                        primary: Colors.white, // set the background color
-                        onPrimary: Colors.green, // set the text color
-                        side: BorderSide(
+                        foregroundColor: Colors.green,
+                        backgroundColor: Colors.white, // set the text color
+                        side: const BorderSide(
                             color: Colors.green), // set the border color
                       ),
                       child: const Text('Manage Account'),
@@ -79,8 +80,8 @@ class User extends StatelessWidget {
                       width: 70,
                       height: 70,
                     ),
-                    title: Text("How's your experience with HUMÁNHUMAY?"),
-                    subtitle: Text('Give Feedback'),
+                    title: const Text("How's your experience with HUMÁNHUMAY?"),
+                    subtitle: const Text('Give Feedback'),
                   ),
                 ),
 
