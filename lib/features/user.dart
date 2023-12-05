@@ -1,10 +1,10 @@
 // User.dart
 
 import 'package:flutter/material.dart';
-import 'ManagePage.dart';
+import 'manage_page.dart';
 
 void main() {
-  runApp(User());
+  runApp(const User());
 }
 
 class User extends StatelessWidget {
@@ -28,7 +28,8 @@ class User extends StatelessWidget {
         ),
         // Background Color
         body: Container(
-          constraints: const BoxConstraints.expand(), // Ensure the container takes up the whole screen
+          constraints: const BoxConstraints
+              .expand(), // Ensure the container takes up the whole screen
           decoration: const BoxDecoration(
             gradient: LinearGradient(
               begin: Alignment.topCenter,
@@ -45,57 +46,59 @@ class User extends StatelessWidget {
               children: [
                 // User Profile
                 Card(
-                  margin: EdgeInsets.all(16.0),
+                  margin: const EdgeInsets.all(16.0),
                   child: ListTile(
                     leading: Image.asset(
                       'assets/images/farmer.png',
                       width: 70,
                       height: 70,
                     ),
-                    title: Text('User Profile'),
+                    title: const Text('User Profile'),
                     subtitle: ElevatedButton(
                       onPressed: () {
                         // Navigate to ManagePage when the button is pressed
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => ManagePage()),
+                          MaterialPageRoute(
+                              builder: (context) => const ManagePage()),
                         );
                       },
                       style: ElevatedButton.styleFrom(
-                        primary: Colors.white, // set the background color
-                        onPrimary: Colors.green, // set the text color
-                        side: BorderSide(color: Colors.green), // set the border color
+                        foregroundColor: Colors.green,
+                        backgroundColor: Colors.white, // set the text color
+                        side: const BorderSide(
+                            color: Colors.green), // set the border color
                       ),
-                      child: Text('Manage Account'),
+                      child: const Text('Manage Account'),
                     ),
                   ),
                 ),
 
                 // Feedback
                 Card(
-                  margin: EdgeInsets.all(16.0),
+                  margin: const EdgeInsets.all(16.0),
                   child: ListTile(
                     leading: Image.asset(
                       'assets/images/likstars.png',
                       width: 70,
                       height: 70,
                     ),
-                    title: Text("How's your experience with HUMÁNHUMAY?"),
-                    subtitle: Text('Give Feedback'),
+                    title: const Text("How's your experience with HUMÁNHUMAY?"),
+                    subtitle: const Text('Give Feedback'),
                   ),
                 ),
 
                 // Share
                 Card(
-                  margin: EdgeInsets.all(16.0),
+                  margin: const EdgeInsets.all(16.0),
                   child: ListTile(
                     leading: Image.asset(
                       'assets/images/share.png',
                       width: 70,
                       height: 70,
                     ),
-                    title: Text("Let's grow rice crops together!"),
-                    subtitle: Text('Share'),
+                    title: const Text("Let's grow rice crops together!"),
+                    subtitle: const Text('Share'),
                   ),
                 ),
               ], // Close the children list

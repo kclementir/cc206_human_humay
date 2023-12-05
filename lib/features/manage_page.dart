@@ -1,33 +1,34 @@
 import 'package:flutter/material.dart';
 
 class ManagePage extends StatelessWidget {
+  const ManagePage({super.key});
+
   @override
   Widget build(BuildContext context) {
-   return Scaffold(
-        appBar: AppBar(
-          title: const Text(
-            'HUMÁNHUMAY',
-            style: TextStyle(
-              fontFamily: 'Brand',
-              color: Color(0xFF367750),
-              fontWeight: FontWeight.bold,
-            ),
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text(
+          'HUMÁNHUMAY',
+          style: TextStyle(
+            fontFamily: 'Brand',
+            color: Color(0xFF367750),
+            fontWeight: FontWeight.bold,
           ),
-          backgroundColor: Colors.white,
         ),
+        backgroundColor: Colors.white,
+      ),
       body: Container(
         constraints: const BoxConstraints.expand(),
-        color: Colors.white, 
+        color: Colors.white,
         child: Padding(
           padding: const EdgeInsets.all(16.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-            
               Container(
                 width: 100,
                 height: 100,
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   shape: BoxShape.circle,
                   image: DecorationImage(
                     image: AssetImage('assets/images/farmer.png'),
@@ -37,18 +38,18 @@ class ManagePage extends StatelessWidget {
                 ),
               ),
 
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
 
               // General Label
-              Text(
+              const Text(
                 'General',
                 style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
               ),
 
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
 
               // Username TextField
-              TextField(
+              const TextField(
                 decoration: InputDecoration(
                   labelText: 'Enter Username',
                   alignLabelWithHint: true,
@@ -60,14 +61,14 @@ class ManagePage extends StatelessWidget {
                   ),
                   filled: true,
                   fillColor: Colors.white,
-                  labelStyle: TextStyle(color: Colors.grey), 
+                  labelStyle: TextStyle(color: Colors.grey),
                 ),
               ),
 
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
 
               // About You TextField
-              TextField(
+              const TextField(
                 decoration: InputDecoration(
                   labelText: 'Write something about you',
                   alignLabelWithHint: true,
@@ -79,21 +80,21 @@ class ManagePage extends StatelessWidget {
                   ),
                   filled: true,
                   fillColor: Colors.white,
-                  labelStyle: TextStyle(color: Colors.grey), 
+                  labelStyle: TextStyle(color: Colors.grey),
                 ),
                 maxLines: 3,
               ),
 
-              SizedBox(height: 30),
+              const SizedBox(height: 30),
 
               // Language and Country
-              Text(
+              const Text(
                 'Language and Country',
                 style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
               ),
 
               // Language TextField
-              TextField(
+              const TextField(
                 decoration: InputDecoration(
                   labelText: 'Select Language',
                   alignLabelWithHint: true,
@@ -105,14 +106,14 @@ class ManagePage extends StatelessWidget {
                   ),
                   filled: true,
                   fillColor: Colors.white,
-                  labelStyle: TextStyle(color: Colors.grey), 
+                  labelStyle: TextStyle(color: Colors.grey),
                 ),
               ),
 
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
 
               //  Country TextField
-              TextField(
+              const TextField(
                 decoration: InputDecoration(
                   labelText: 'Select Country',
                   alignLabelWithHint: true,
@@ -124,7 +125,7 @@ class ManagePage extends StatelessWidget {
                   ),
                   filled: true,
                   fillColor: Colors.white,
-                  labelStyle: TextStyle(color: Colors.grey), 
+                  labelStyle: TextStyle(color: Colors.grey),
                 ),
               ),
             ],
